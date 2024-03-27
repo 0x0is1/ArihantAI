@@ -1,0 +1,7 @@
+./server/learning_handler/__pycache__
+./server/request_handler/__pycache__
+./server/learning_handler/datasets/*.zip
+./server/learning_handler/models/*.keras
+./server/uploads/*.jpg
+./server/uploads/*.JPG
+./client/
