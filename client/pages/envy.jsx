@@ -1,1 +1,0 @@
-export default {API_URL:"http://192.168.110.119:5000"}
