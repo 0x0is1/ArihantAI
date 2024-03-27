@@ -9,6 +9,7 @@ const ModelDetails = ({ setModelReady }) => {
     accuracy: 0.0,
     last_modified: 0,
     status: 0,
+    message: "Loading..."
   });
 
   useEffect(() => {
