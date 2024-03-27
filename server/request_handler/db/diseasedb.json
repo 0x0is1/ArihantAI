@@ -1,0 +1,360 @@
+{
+  "Apple___Apple_scab": {
+    "scientific_name": "Venturia inaequalis",
+    "species_name": "Malus domestica",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing captan or sulfur during the growing season.",
+      "Prune infected branches and remove fallen leaves to reduce disease spread.",
+      "Use resistant apple varieties if available."
+    ]
+  },
+  "Apple___Black_rot": {
+    "scientific_name": "Botryosphaeria obtusa",
+    "species_name": "Malus domestica",
+    "severity": "High",
+    "cures": [
+      "Prune infected branches and destroy affected fruits to prevent further spread.",
+      "Apply fungicides containing mancozeb or captan during the growing season.",
+      "Improve air circulation around apple trees by proper pruning."
+    ]
+  },
+  "Apple___Cedar_apple_rust": {
+    "scientific_name": "Gymnosporangium juniperi-virginianae",
+    "species_name": "Malus domestica",
+    "severity": "Moderate",
+    "cures": [
+      "Prune juniper trees nearby to reduce the spread of rust to apple trees.",
+      "Apply fungicides containing myclobutanil or propiconazole during the spring.",
+      "Use resistant apple cultivars if possible."
+    ]
+  },
+  "Apple___healthy": {
+    "scientific_name": null,
+    "species_name": "Malus domestica",
+    "severity": "Low",
+    "cures": [
+      "Maintain proper orchard sanitation, irrigation, and nutrition to keep apple trees healthy.",
+      "Monitor for pests and diseases regularly to detect any issues early."
+    ]
+  },
+  "Blueberry___healthy": {
+    "scientific_name": null,
+    "species_name": "Vaccinium corymbosum",
+    "severity": "Low",
+    "cures": [
+      "Provide adequate water, sunlight, and soil nutrition for blueberry plants.",
+      "Control pests such as blueberry maggots and diseases like mummy berry through cultural practices and timely applications of appropriate pesticides."
+    ]
+  },
+  "Cherry_(including_sour)___Powdery_mildew": {
+    "scientific_name": "Podosphaera clandestina",
+    "species_name": "Prunus avium",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing sulfur or potassium bicarbonate during the growing season.",
+      "Prune to improve air circulation and reduce humidity around cherry trees."
+    ]
+  },
+  "Cherry_(including_sour)___healthy": {
+    "scientific_name": null,
+    "species_name": "Prunus avium",
+    "severity": "Low",
+    "cures": [
+      "Maintain proper soil pH, drainage, and nutrient levels for healthy cherry trees.",
+      "Prune regularly to remove dead or diseased branches and encourage new growth."
+    ]
+  },
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "scientific_name": "Cercospora zeae-maydis",
+    "species_name": "Zea mays",
+    "severity": "Moderate",
+    "cures": [
+      "Rotate crops and use disease-resistant corn varieties.",
+      "Apply fungicides containing azoxystrobin or pyraclostrobin as a preventive measure.",
+      "Maintain proper plant spacing and reduce leaf wetness."
+    ]
+  },
+  "Corn_(maize)___Common_rust_": {
+    "scientific_name": "Puccinia sorghi",
+    "species_name": "Zea mays",
+    "severity": "High",
+    "cures": [
+      "Use resistant corn varieties whenever possible.",
+      "Apply fungicides containing chlorothalonil or propiconazole during humid conditions."
+    ]
+  },
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "scientific_name": "Exserohilum turcicum",
+    "species_name": "Zea mays",
+    "severity": "High",
+    "cures": [
+      "Rotate crops and use disease-resistant corn hybrids.",
+      "Apply fungicides containing azoxystrobin or chlorothalonil during the growing season.",
+      "Practice proper field hygiene by removing crop residues."
+    ]
+  },
+  "Corn_(maize)___healthy": {
+    "scientific_name": null,
+    "species_name": "Zea mays",
+    "severity": "Low",
+    "cures": [
+      "Practice crop rotation and maintain optimal soil fertility and moisture levels.",
+      "Monitor for pests such as corn borers and implement pest control measures as needed."
+    ]
+  },
+  "Grape___Black_rot": {
+    "scientific_name": "Guignardia bidwellii",
+    "species_name": "Vitis vinifera",
+    "severity": "High",
+    "cures": [
+      "Prune grapevines to improve air circulation and reduce disease pressure.",
+      "Apply fungicides containing captan or mancozeb during the growing season.",
+      "Remove and destroy infected plant parts."
+    ]
+  },
+  "Grape___Esca_(Black_Measles)": {
+    "scientific_name": "Phaeomoniella chlamydospora",
+    "species_name": "Vitis vinifera",
+    "severity": "High",
+    "cures": [
+      "Prune infected vines and apply fungicides containing fosetyl-al or propiconazole.",
+      "Improve vineyard airflow and reduce stress on grapevines."
+    ]
+  },
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "scientific_name": "Isariopsis viticola",
+    "species_name": "Vitis vinifera",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing copper compounds or sulfur during the growing season.",
+      "Prune to increase sunlight penetration and airflow within the grapevine canopy."
+    ]
+  },
+  "Grape___healthy": {
+    "scientific_name": null,
+    "species_name": "Vitis vinifera",
+    "severity": "Low",
+    "cures": [
+      "Use disease-resistant grape varieties suited to your region and climate.",
+      "Implement proper vineyard management practices, including pruning, trellising, and irrigation."
+    ]
+  },
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "scientific_name": "Candidatus Liberibacter asiaticus",
+    "species_name": "Citrus sinensis",
+    "severity": "High",
+    "cures": [
+      "Manage citrus psyllid vectors with insecticides containing imidacloprid or spinosad.",
+      "Remove and destroy infected citrus trees promptly to prevent further spread.",
+      "Implement quarantine measures to limit the movement of infected plant material."
+    ]
+  },
+  
+  "Peach___Bacterial_spot": {
+    "scientific_name": "Xanthomonas arboricola pv. pruni",
+    "species_name": "Prunus persica",
+    "severity": "Moderate",
+    "cures": [
+      "Apply copper-based fungicides during dormant periods and use disease-resistant peach cultivars.",
+      "Practice proper orchard sanitation and avoid overhead irrigation."
+    ]
+  },
+  "Peach___healthy": {
+    "scientific_name": null,
+    "species_name": "Prunus persica",
+    "severity": "Low",
+    "cures": [
+      "Maintain optimal soil drainage and pH for peach trees.",
+      "Prune regularly to open up the canopy and promote air circulation."
+    ]
+  },
+  "Pepper,_bell___Bacterial_spot": {
+    "scientific_name": "Xanthomonas campestris pv. vesicatoria",
+    "species_name": "Capsicum annuum",
+    "severity": "Moderate",
+    "cures": [
+      "Apply copper-based fungicides and practice crop rotation.",
+      "Use disease-resistant pepper varieties and avoid overhead irrigation."
+    ]
+  },
+  "Pepper,_bell___healthy": {
+    "scientific_name": null,
+    "species_name": "Capsicum annuum",
+    "severity": "Low",
+    "cures": [
+      "Provide adequate sunlight, water, and nutrients for bell pepper plants.",
+      "Monitor for pests such as aphids and implement integrated pest management strategies."
+    ]
+  },
+  "Potato___Early_blight": {
+    "scientific_name": "Alternaria solani",
+    "species_name": "Solanum tuberosum",
+    "severity": "Moderate",
+    "cures": [
+      "Rotate crops and remove infected foliage promptly.",
+      "Apply fungicides containing chlorothalonil or maneb during periods of high disease pressure.",
+      "Improve soil drainage and avoid excessive nitrogen fertilization."
+    ]
+  },
+  "Potato___Late_blight": {
+    "scientific_name": "Phytophthora infestans",
+    "species_name": "Solanum tuberosum",
+    "severity": "High",
+    "cures": [
+      "Apply fungicides containing chlorothalonil or mancozeb preventatively.",
+      "Remove and destroy infected plants to reduce inoculum levels.",
+      "Avoid overhead irrigation and improve field drainage."
+    ]
+  },
+  "Potato___healthy": {
+    "scientific_name": null,
+    "species_name": "Solanum tuberosum",
+    "severity": "Low",
+    "cures": [
+      "Practice crop rotation and use certified disease-free seed potatoes.",
+      "Implement proper irrigation and fertilization practices."
+    ]
+  },
+  "Raspberry___healthy": {
+    "scientific_name": null,
+    "species_name": "Rubus idaeus",
+    "severity": "Low",
+    "cures": [
+      "Prune raspberry canes regularly to improve airflow and reduce disease risk.",
+      "Apply fungicides containing myclobutanil or sulfur as a preventive measure.",
+      "Monitor for pests such as raspberry beetles and control as needed."
+    ]
+  },
+  "Soybean___healthy": {
+    "scientific_name": null,
+    "species_name": "Glycine max",
+    "severity": "Low",
+    "cures": [
+      "Rotate crops and plant disease-resistant soybean varieties.",
+      "Monitor for soybean pests such as aphids and bean leaf beetles.",
+      "Implement cultural practices such as proper spacing and weed control."
+    ]
+  },
+  "Squash___Powdery_mildew": {
+    "scientific_name": "Podosphaera xanthii",
+    "species_name": "Cucurbita pepo",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing potassium bicarbonate or sulfur.",
+      "Prune squash vines to improve air circulation and reduce humidity levels."
+    ]
+  },
+  "Strawberry___Leaf_scorch": {
+    "scientific_name": "Diplocarpon earlianum",
+    "species_name": "Fragaria × ananassa",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing myclobutanil or copper-based compounds during the growing season.",
+      "Maintain proper spacing between strawberry plants and remove infected foliage promptly."
+    ]
+  },
+  "Strawberry___healthy": {
+    "scientific_name": null,
+    "species_name": "Fragaria × ananassa",
+    "severity": "Low",
+    "cures": [
+      "Plant disease-resistant strawberry varieties suited to your region.",
+      "Provide adequate sunlight, water, and soil drainage for healthy strawberry growth."
+    ]
+  },
+  "Tomato___Bacterial_spot": {
+    "scientific_name": "Xanthomonas campestris pv. vesicatoria",
+    "species_name": "Solanum lycopersicum",
+    "severity": "Moderate",
+    "cures": [
+      "Apply copper-based fungicides and practice crop rotation.",
+      "Avoid overhead irrigation and manage weed hosts that can harbor the bacterial spot pathogen."
+    ]
+  },
+  "Tomato___Early_blight": {
+    "scientific_name": "Alternaria solani",
+    "species_name": "Solanum lycopersicum",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing chlorothalonil or mancozeb preventatively.",
+      "Remove and destroy infected plant parts and improve airflow around tomato plants."
+    ]
+  },
+  "Tomato___Late_blight": {
+    "scientific_name": "Phytophthora infestans",
+    "species_name": "Solanum lycopersicum",
+    "severity": "High",
+    "cures": [
+      "Apply fungicides containing chlorothalonil or mancozeb preventatively.",
+      "Avoid overhead irrigation and remove infected plants promptly to reduce inoculum."
+    ]
+  },
+  "Tomato___Leaf_Mold": {
+    "scientific_name": "Fulvia fulva",
+    "species_name": "Solanum lycopersicum",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing chlorothalonil or copper-based compounds during humid conditions.",
+      "Prune tomato plants to improve airflow and reduce humidity levels in the canopy."
+    ]
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "scientific_name": "Septoria lycopersici",
+    "species_name": "Solanum lycopersicum",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing chlorothalonil or mancozeb during the growing season.",
+      "Remove and destroy infected leaves, especially lower leaves near the soil."
+    ]
+  },
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "scientific_name": "Tetranychus urticae",
+    "species_name": "Solanum lycopersicum",
+    "severity": "Moderate",
+    "cures": [
+      "Control spider mites with insecticidal soaps or miticides.",
+      "Introduce predatory mites as a biological control method.",
+      "Maintain proper humidity levels to discourage spider mite infestations."
+    ]
+  },
+  "Tomato___Target_Spot": {
+    "scientific_name": "Corynespora cassiicola",
+    "species_name": "Solanum lycopersicum",
+    "severity": "Moderate",
+    "cures": [
+      "Apply fungicides containing chlorothalonil or mancozeb during periods of high humidity.",
+      "Remove and destroy infected plant parts to reduce disease spread."
+    ]
+  },
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "scientific_name": "Begomovirus",
+    "species_name": "Solanum lycopersicum",
+    "severity": "High",
+    "cures": [
+      "Use insecticides to control whiteflies, which spread the virus.",
+      "Remove and destroy infected plants to prevent further spread.",
+      "Plant resistant tomato varieties if available."
+    ]
+  },
+  "Tomato___Tomato_mosaic_virus": {
+    "scientific_name": "Tomato mosaic virus",
+    "species_name": "Solanum lycopersicum",
+    "severity": "High",
+    "cures": [
+      "Control aphids, which can transmit the virus, with insecticides or beneficial insects.",
+      "Remove and destroy infected plants to prevent the virus from spreading.",
+      "Plant virus-resistant tomato varieties if possible."
+    ]
+  },
+  "Tomato___healthy": {
+    "scientific_name": null,
+    "species_name": "Solanum lycopersicum",
+    "severity": "Low",
+    "cures": [
+      "Practice crop rotation and maintain good garden hygiene.",
+      "Provide proper spacing between tomato plants for airflow.",
+      "Monitor for pests and diseases regularly to catch any issues early."
+    ]
+  }
+}

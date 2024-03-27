@@ -8,6 +8,7 @@ from werkzeug.utils import secure_filename
 import os
 import json
 import time
+import base64
 
 app = Flask(__name__)
 
@@ -98,6 +99,18 @@ def get_prediction_status(tracking_id):
         return jsonify({'tracking_id': tracking_id, 'status': 'incomplete', 'message': 'Prediction is still in progress'}), 200
     else:
         return jsonify({'status':-1, 'error': 'Prediction data not found for the tracking ID'}), 404
+
+@app.route('/disease/<string:disease_code>', methods=['GET'])
+def get_disease_detail(disease_code):
+    disease_code = base64.b64decode(disease_code).decode("utf-8")
+    with open("./request_handler/db/diseasedb.json", "r") as f:
+        data = json.load(f)
+        try:
+            data = data[disease_code]
+            data["status"] = 1
+            return jsonify(data), 200
+        except Exception as e:
+            return jsonify({'status':-1, 'error': 'Details not found'}), 404
 
 @app.route('/model_detail', methods=['GET'])
 def get_model_detail():
