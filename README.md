@@ -69,19 +69,17 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
     cd server
     python app.py
     ```
-    In above method, you will see an IP address like url. Copy it.
+    * In above method, you will see an IP address like url. Copy it.
+    * open client/pages/envy.js and paste you ip address like:
 
+    ```sh
+    export default {API_URL:"YOUR_IP_ADDRESS_HERE:5000"}
+    ```
     * in console 2
     ```sh
         cd ArihantAI
         cd client
         npm start
-    ```
-
-    * open client/pages/envy.js and paste you ip address like:
-
-    ```sh
-    export default {API_URL:"YOUR_IP_ADDRESS_HERE:5000"}
     ```
 
     * Now you are ready to use the app.
@@ -96,19 +94,18 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
     docker run -d -p 5000:5000 arihant:latest
     ```
 
-    In above method, you will see an IP address like url. Copy it.
+    * In above method, you will see an IP address like url. Copy it.
+    * open client/pages/envy.js and paste you ip address like:
+
+    ```sh
+    export default {API_URL:"YOUR_IP_ADDRESS_HERE:5000"}
+    ```
 
     * in console 2
     ```sh
         cd ArihantAI
         cd client
         npm start
-    ```
-
-    * open client/pages/envy.js and paste you ip address like:
-
-    ```sh
-    export default {API_URL:"YOUR_IP_ADDRESS_HERE:5000"}
     ```
 
     * Now you are ready to use the app.
@@ -120,9 +117,8 @@ We are working on the build app yet as the server is not fixed for use. We will 
 
 ## Preview
 
-![ss1](./screenshots/ss1.jpg)
+<img src="./screenshots/ss1.jpg" height="30%" width="30%" alt="ss1" />
 
-![ss2](./screenshots/ss2.jpg)
+<img src="./screenshots/ss2.jpg" height="30%" width="30%" alt="ss2" />
 
-![ss3](./screenshots/ss3.jpg)
-
+<img src="./screenshots/ss3.jpg" height="30%" width="30%" alt="ss3" />
