@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
-import constants from "../../env";
+import constants from "../../envy";
 
 const ModelDetails = ({ setModelReady }) => {
   const [details, setDetails] = useState({
@@ -89,9 +89,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     padding: 10,
-    backgroundColor: "red",
+    backgroundColor: "#FF0000",
     borderRadius: 5,
-    color: "white",
+    color: "#ffffff",
     borderWidth: 1,
     borderColor: "#738290",
     alignItems: "center",

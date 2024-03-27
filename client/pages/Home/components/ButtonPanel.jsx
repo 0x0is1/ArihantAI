@@ -43,7 +43,7 @@ const ButtonPanel = ({
           reverse
           name="camera"
           type="antdesign"
-          color={!!capturedImage || uploading ? "gray" : "#17BEBB"}
+          color={!!capturedImage || uploading ? "#808080" : "#17BEBB"}
           size={30}
         />
       </TouchableHighlight>
@@ -56,7 +56,7 @@ const ButtonPanel = ({
           reverse
           name="picture"
           type="antdesign"
-          color={!!capturedImage || uploading ? "gray" : "#ff6998"}
+          color={!!capturedImage || uploading ? "#808080" : "#ff6998"}
           size={30}
         />
       </TouchableHighlight>

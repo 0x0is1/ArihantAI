@@ -8,7 +8,7 @@ const Navbar = () => {
       <Feather
         name="feather"
         size={24}
-        color="#fff"
+        color="#ffffff"
         style={styles.menuIcon}
       />
       <Text style={styles.navbarTitle}>Arihant AI</Text>
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
   navbarTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#fff",
+    color: "#ffffff",
   },
 });

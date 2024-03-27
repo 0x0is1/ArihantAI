@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import ModelDetails from "../Home/components/ModelDetails";
-import constants from "../env";
+import constants from "../envy";
 
 const Result = ({ navigation }) => {
   const trid = navigation.getState().routes[1].params.tracking_id;
@@ -80,18 +80,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginVertical: 20,
     padding: 30,
-    backgroundColor: "rgba(184, 40, 62, 0.21)",
+    backgroundColor: "#b8283eed",
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: "rgba(184, 40, 62, 0.93)",
-    color: "rgba(255, 97, 121, 1)",
+    borderColor: "#b8283eed",
+    color: "#ff6179",
     alignItems: "left",
   },
   activityIndicator: {
     paddingHorizontal: 10,
   },
   resultText: {
-    color: "rgba(203, 0, 100, 1)",
+    color: "#cb0064",
     fontSize: 16,
   },
   title: {

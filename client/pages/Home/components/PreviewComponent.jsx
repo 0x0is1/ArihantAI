@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, Button, Image, TouchableHighlight } from "react-native";
 import { Icon } from "@rneui/themed";
-import constants from "../../env";
+import constants from "../../envy";
 
 const PreviewComponent = ({
   capturedImage,
