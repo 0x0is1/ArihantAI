@@ -125,7 +125,7 @@ class Trainer:
 
     def test_model(self):
         if self.trained and self.model is not None:
-            evaluation_result = self.model.evaluate(self.test_ds)
+            evaluation_result = self.model.evaluate(self.validation_ds)
             return evaluation_result
         else:
             return (-1, -1)
