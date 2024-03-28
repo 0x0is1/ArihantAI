@@ -23,9 +23,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 trainer = Trainer()
 prediction_data = {}
-MODEL_NAME = 'Arihant.v1'
+MODEL_NAME = os.environ.get("MODEL_NAME") # 'Arihant.v1'
 IS_MODEL_TRAINING = False
-DS_SIZE = None
+DS_SIZE = 10
 incomplete_predictions = set()
 train_lock = threading.Lock()
 
@@ -45,7 +45,7 @@ def run_predict(tracking_id, filename):
 def train():
     global IS_MODEL_TRAINING
     with train_lock:
-        trainer.load_datasets('./learning_handler/datasets/New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)', DS_SIZE)
+        trainer.load_datasets('./learning_handler/datasets/New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)', './learning_handler/datasets', DS_SIZE)
         trainer.preprocess_dataset()
         if trainer.build_model() and trainer.train_model():
             loss_rate, accuracy = trainer.test_model()
