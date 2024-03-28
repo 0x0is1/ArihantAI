@@ -5,6 +5,7 @@ import RenderCamera from "./components/RenderCamera";
 import PreviewComponent from "./components/PreviewComponent";
 import ButtonPanel from "./components/ButtonPanel";
 import ModelDetails from "./components/ModelDetails";
+import APIurlContainer from "./components/APIurlContainer";
 
 export default function Home({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
@@ -44,15 +45,16 @@ export default function Home({ navigation }) {
           uploading={uploading}
         />
       )}
+      <APIurlContainer />
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   scrollViewContainer: {
-    paddingTop: 50,
+    paddingTop: 20,
     backgroundColor: "#dcf5ef",
     alignItems: "center",
-    height: "130%",
+    height: "110%",
   },
 });

@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, View, Text, Button, Image, TouchableHighlight } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
 import { Icon } from "@rneui/themed";
-import constants from "../../envy";
+import * as FileSystem from "expo-file-system";
 
 const PreviewComponent = ({
   capturedImage,
@@ -10,10 +10,23 @@ const PreviewComponent = ({
   setUploading,
   navigation
 }) => {
+    const [APIurl, setAPIurl] = useState("");
+    const readFromFile = async () => {
+      try {
+        const filePath = FileSystem.documentDirectory + "envy/envy.js";
+        const fileContent = await FileSystem.readAsStringAsync(filePath);
+        setAPIurl(fileContent);
+      } catch (error) {
+        console.error("Failed to read file:", error);
+        Alert.alert("Error", "Failed to read file.");
+      }
+    };
   const retakePicture = () => {
     setCapturedImage(null);
   };
-
+  useEffect(()=>{
+    readFromFile();
+  },[])
   const uploadImage = async () => {
     if (!capturedImage) {
       alert("No image captured");
@@ -29,7 +42,7 @@ const PreviewComponent = ({
         name: "photo.jpg",
       });
 
-      const response = await fetch(`${constants.API_URL}/upload`, {
+      const response = await fetch(`${APIurl}/upload`, {
         method: "POST",
         body: formData,
         headers: {

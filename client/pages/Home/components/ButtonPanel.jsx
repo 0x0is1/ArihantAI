@@ -42,7 +42,7 @@ const ButtonPanel = ({
         <Icon
           reverse
           name="camera"
-          type="antdesign"
+          type="ionicon"
           color={!!capturedImage || uploading ? "#808080" : "#17BEBB"}
           size={30}
         />

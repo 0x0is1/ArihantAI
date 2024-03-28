@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
-import constants from "../../envy";
+import { ActivityIndicator, StyleSheet, Text, View, Alert } from "react-native";
+import * as FileSystem from "expo-file-system";
 
 const ModelDetails = ({ setModelReady }) => {
   const [details, setDetails] = useState({
@@ -9,12 +9,25 @@ const ModelDetails = ({ setModelReady }) => {
     accuracy: 0.0,
     last_modified: 0,
     status: 0,
-    message: "Loading..."
+    message: "Loading...",
   });
+  const [APIurl, setAPIurl] = useState("");
+
+  const readFromFile = async () => {
+    try {
+      const filePath = FileSystem.documentDirectory + "envy/envy.js";
+      const fileContent = await FileSystem.readAsStringAsync(filePath);
+      setAPIurl(fileContent);
+    } catch (error) {
+      console.error("Failed to read file:", error);
+      Alert.alert("Error", "Failed to read file.");
+    }
+  };
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const response = await fetch(`${constants.API_URL}/model_detail`, {
+      if (!APIurl) return;
+      const response = await fetch(`${APIurl}/model_detail`, {
         method: "GET",
         body: null,
         headers: {},
@@ -27,12 +40,14 @@ const ModelDetails = ({ setModelReady }) => {
         setModelReady && setModelReady(true);
       }
     };
+
     try {
-      fetchDetails();
+      readFromFile().then(() => fetchDetails());
     } catch (error) {
-      alert(error)
+      console.error(error);
+      Alert.alert("Error", "Failed to fetch details.");
     }
-  }, []);
+  }, [APIurl]);
 
   const approximateLossRate = (lossRate) => {
     return Math.round(lossRate * 100) / 100;
@@ -58,7 +73,7 @@ const ModelDetails = ({ setModelReady }) => {
       </View>
       <View style={styles.row}>
         <Text style={{ ...styles.text, backgroundColor: "#424C55" }}>
-          Accuracy: {Math.round(details.accuracy*100)}%
+          Accuracy: {Math.round(details.accuracy * 100)}%
         </Text>
         <Text style={{ ...styles.text, backgroundColor: "#003844" }}>
           Update: {getHourDifference()} hours
