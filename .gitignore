@@ -2,6 +2,7 @@ server/learning_handler/__pycache__/*.pyc
 server/request_handler/__pycache__/*.pyc
 server/learning_handler/datasets/*.zip
 server/learning_handler/datasets/New*
+server/learning_handler/datasets/test
 server/learning_handler/models/*.keras
 server/learning_handler/models/*.json
 server/uploads/*.jpg
@@ -12,3 +13,4 @@ client/node_modules/
 client/.expo
 client/pages/env.js
 client/package-lock.json
+server/__pycache__
