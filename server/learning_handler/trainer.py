@@ -11,9 +11,9 @@ class Trainer:
         self.class_names = None
         self.model = None
 
-    def load_datasets(self, dataset_directory, ds_size=None):
+    def load_datasets(self, train_dataset_directory, test_dataset_directory, ds_size=None):
         train_ds = preprocessing.image_dataset_from_directory(
-            f'{dataset_directory}/train',
+            f'{train_dataset_directory}/train',
             shuffle=True,
             seed=42,
             color_mode='rgb',
@@ -24,7 +24,7 @@ class Trainer:
         )
 
         validation_ds = preprocessing.image_dataset_from_directory(
-            f'{dataset_directory}/valid',
+            f'{train_dataset_directory}/valid',
             image_size=(self.IMAGE_SIZE, self.IMAGE_SIZE),
             seed=42,
             shuffle=True,
@@ -34,7 +34,7 @@ class Trainer:
         )
 
         test_ds = preprocessing.image_dataset_from_directory(
-            f'{dataset_directory}/test',
+            f'{test_dataset_directory}/test',
             image_size=(self.IMAGE_SIZE, self.IMAGE_SIZE),
             seed=42,
             shuffle=True,
