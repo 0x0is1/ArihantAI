@@ -4,6 +4,12 @@
 
 Fullstack app for Crop disease detection and solution suggestion AI. This app is made during CIC Build-A-Thon Hackathon.
 
+## Preview
+
+<video width="240" height="570" controls>
+  <source src="./screenshots/v1.mp4" type="video/mp4">
+</video>
+
 ## Participant details
 | Name                | Registration number | Effective Role | Institution |
 |---------------------|---------------------|----------------|-------------|
@@ -27,13 +33,29 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
 ### Model details
 
 * Dataset used : [New Plant Disease Dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
+
 * 7-layerd convulational neural network (CNN)
+
 * Trained on more than 70000 files of 30 classes
+
 * Tested and validated on 30000 files of 8 classes
-* Average accuracy achieved of 87% (approximate)
+
+* Average accuracy achieved of 89% (approximate)
+
 * Maximum confidence achieved is 60%
+
 * Minimum loss achieved 0.06
+
 * Optimized model size is 300MB (approx)
+
+### Model architecture (7-Layer model)
+
+<img src="./screenshots/f1.png" height="60%" width="60%">
+
+<img src="./screenshots/f2.png" height="60%" width="60%">
+
+<img src="./screenshots/f3.png" height="60%" width="60%">
+
 
 ## Technologies used
 
@@ -62,31 +84,39 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
 ### Self train and host
 
 * Local machine method (stable)
+
+    <img src="./screenshots/sss1.png" />
+
     * in console 1
+
     ```sh
     git clone https://github.com/0x0is1/ArihantAI
     cd ArihantAI
     cd server
     python app.py
     ```
-    * In above method, you will see an IP address like url. Copy it.
-    * open client/pages/envy.js and paste you ip address like:
 
-    ```sh
-    export default {API_URL:"YOUR_IP_ADDRESS_HERE:5000"}
-    ```
     * in console 2
+
+    <img src="./screenshots/sss2.png" />
+
     ```sh
         cd ArihantAI
         cd client
         npm start
     ```
 
+    * __Remember to put your self hosted server's address in the below in home page__
+
     * Now you are ready to use the app.
     * Scan the QR code displayed on the console with Expo Go app in your phone
 
 * Docker method
+
     * in console 1
+
+    <img src="./screenshots/sss1.png" />
+
     ```sh
     git clone https://github.com/0x0is1/ArihantAI
     cd ArihantAI
@@ -94,31 +124,29 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
     docker run -d -p 5000:5000 arihant:latest
     ```
 
-    * In above method, you will see an IP address like url. Copy it.
-    * open client/pages/envy.js and paste you ip address like:
-
-    ```sh
-    export default {API_URL:"YOUR_IP_ADDRESS_HERE:5000"}
-    ```
-
     * in console 2
+
+    <img src="./screenshots/sss2.png" />
+
     ```sh
         cd ArihantAI
         cd client
         npm start
     ```
 
+    * __Remember to put your self hosted server's address in the below in home page__
+
     * Now you are ready to use the app.
     * Scan the QR code displayed on the console with Expo Go app in your phone
 
 ## Download Built Apk (Unstable)
 
-We are working on the build app yet as the server is not fixed for use. We will release an stable version soon but as of now, you can test the prototype [here](https://expo.dev/artifacts/eas/vdv8Yrf3yUJqQLNEr3gbwR.apk)
+We are working on the build app yet as the server is not fixed for use. We will release an stable version soon but as of now, you can test the prototype [here](https://expo.dev/artifacts/eas/vULn8pbB4Ykbh3ycigysmE.apk)
 
 ## Preview
 
-<img src="./screenshots/ss1.jpg" height="30%" width="30%" alt="ss1" />
+<img src="./screenshots/ss1.jpg" height="50%" width="50%" alt="ss1" />
 
-<img src="./screenshots/ss2.jpg" height="30%" width="30%" alt="ss2" />
+<img src="./screenshots/ss2.jpg" height="50%" width="50%" alt="ss2" />
 
-<img src="./screenshots/ss3.jpg" height="30%" width="30%" alt="ss3" />
+<img src="./screenshots/ss3.jpg" height="50%" width="50%" alt="ss3" />
