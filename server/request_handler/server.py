@@ -23,9 +23,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 trainer = Trainer()
 prediction_data = {}
-MODEL_NAME = os.environ.get("MODEL_NAME") # 'Arihant.v1'
+MODEL_NAME = os.environ.get("MODEL_NAME") or 'Arihant.v1'
 IS_MODEL_TRAINING = False
-DS_SIZE = 10
+DS_SIZE = None
 incomplete_predictions = set()
 train_lock = threading.Lock()
 
