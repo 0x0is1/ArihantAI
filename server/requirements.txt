@@ -3,3 +3,5 @@ numpy
 matplotlib
 flask
 werkzeug
+kaggle
+gunicorn
