@@ -27,7 +27,11 @@ const ModelDetails = ({ setModelReady }) => {
         setModelReady && setModelReady(true);
       }
     };
-    fetchDetails();
+    try {
+      fetchDetails();
+    } catch (error) {
+      alert(error)
+    }
   }, []);
 
   const approximateLossRate = (lossRate) => {

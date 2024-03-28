@@ -53,6 +53,6 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     backgroundColor: "#dcf5ef",
     alignItems: "center",
-    height: "100%",
+    height: "130%",
   },
 });
