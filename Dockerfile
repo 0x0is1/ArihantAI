@@ -9,8 +9,8 @@ RUN apt-get update \
 
 RUN pip install kaggle gunicorn
 
-ENV KAGGLE_USERNAME="notyoursurya"
-ENV KAGGLE_KEY="ef6123cf1b7d184ff4425cdd469cccb1"
+ENV KAGGLE_USERNAME=""
+ENV KAGGLE_KEY=""
 ENV MODEL_NAME="Arihant.v1"
 
 RUN mkdir -p /root/.kaggle \
