@@ -137,9 +137,9 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
     * Now you are ready to use the app.
     * Scan the QR code displayed on the console with Expo Go app in your phone
 
-## Download Built Apk (Unstable)
+## Download Built Apk (Stable)
 
-We are working on the build app yet as the server is not fixed for use. We will release an stable version soon but as of now, you can test the prototype [here](https://expo.dev/artifacts/eas/vULn8pbB4Ykbh3ycigysmE.apk)
+[Here](https://expo.dev/artifacts/eas/vu3ujbP4FVumyxphuXuqjH.apk) is built apk file for use. You may download it, start your server, put your server address in the app and restart the app.
 
 ## Preview
 
