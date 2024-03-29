@@ -6,9 +6,7 @@ Fullstack app for Crop disease detection and solution suggestion AI. This app is
 
 ## Preview
 
-<video width="240" height="570" controls>
-  <source src="./screenshots/v1.mp4" type="video/mp4">
-</video>
+https://github.com/0x0is1/ArihantAI/assets/42772562/d97b4595-5c9f-4f57-bdf9-d8a71e70baae
 
 ## Participant details
 | Name                | Registration number | Effective Role | Institution |
