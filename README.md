@@ -32,21 +32,36 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
 
 * Dataset used : [New Plant Disease Dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
 
-* 7-layerd convulational neural network (CNN)
-
 * Trained on more than 70000 files of 30 classes
 
 * Tested and validated on 30000 files of 8 classes
 
-* Average accuracy achieved of 89% (approximate)
+#### 1. ResNet50
+![ResNet](https://miro.medium.com/v2/resize:fit:1400/0*tH9evuOFqk8F41FG.png)
+* 7-layerd convulational neural network (CNN)
 
-* Maximum confidence achieved is 60%
+* Average accuracy achieved of 95.48%
 
-* Minimum loss achieved 0.06
+* Maximum confidence achieved is 9
+
+* Minimum loss achieved 0.14
+
+* Optimized model size is 273MB
+
+#### 2. Custom CNN
+
+* 7-layerd convulational neural network (CNN)
+
+* Maximum accuracy achieved of 89% (approximate)
+
+* Maximum confidence achieved is 6
+
+* Minimum loss achieved 0.56
 
 * Optimized model size is 300MB (approx)
 
-### Model architecture (7-Layer model)
+
+#### Model architecture (7-Layer Custom CNN)
 
 <img src="./screenshots/f1.png" height="60%" width="60%">
 
@@ -136,6 +151,11 @@ Developing solutions, keeping in mind the need to enhance the primary sector of 
 
     * Now you are ready to use the app.
     * Scan the QR code displayed on the console with Expo Go app in your phone
+
+## Model Configuration
+You can configure model type (Our custom CNN (code 0) or ResNet(code 1)) with environment variable on server or Dockerfile.
+
+If you are running on local machine, you can directly edit **(./server/request_handler/server.py)** file to change the configuration.
 
 ## Download Built Apk (Stable)
 
