@@ -18,14 +18,15 @@ def get_home():
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+IS_MODEL_TRAINING = False
+DS_SIZE = os.environ.get("DS_SIZE") or None
+MODEL_NAME = os.environ.get("MODEL_NAME") or 'Arihant.v1'
+MODEL_TYPE = os.environ.get("MODEL_TYPE") or 1
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-trainer = Trainer()
+trainer = Trainer(int(MODEL_TYPE))
 prediction_data = {}
-MODEL_NAME = os.environ.get("MODEL_NAME") or 'Arihant.v1'
-IS_MODEL_TRAINING = False
-DS_SIZE = None
 incomplete_predictions = set()
 train_lock = threading.Lock()
 
@@ -45,12 +46,12 @@ def run_predict(tracking_id, filename):
 def train():
     global IS_MODEL_TRAINING
     with train_lock:
-        trainer.load_datasets('./learning_handler/datasets/New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)', './learning_handler/datasets', DS_SIZE)
+        trainer.load_datasets('./learning_handler/datasets/New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)', './learning_handler/datasets', int(DS_SIZE))
         trainer.preprocess_dataset()
         if trainer.build_model() and trainer.train_model():
             loss_rate, accuracy = trainer.test_model()
-            trainer.save_model(f'./learning_handler/models/{MODEL_NAME}')
-            with open("model_details.json", "w") as f:
+            trainer.save_model(f'./learning_handler/models/{MODEL_NAME}.T{MODEL_TYPE}')
+            with open(f"model_details.T{MODEL_TYPE}.json", "w") as f:
                 details = {
                     "name": MODEL_NAME,
                     "loss_rate": loss_rate,
@@ -66,7 +67,7 @@ predictor = None
 
 while predictor == None:
     try:
-        predictor = Predictor(MODEL_NAME)
+        predictor = Predictor(MODEL_NAME, MODEL_TYPE, False)
     except OSError:
         train()
         continue
@@ -117,7 +118,7 @@ def get_model_detail():
     global IS_MODEL_TRAINING
     FULL_DAY_TIMESTAMP = 86400
     try:
-        with open("model_details.json", "r") as f:
+        with open(f"model_details.T{MODEL_TYPE}.json", "r") as f:
             model_details = json.load(f)
             if int(time.time()) - model_details["last_modified"] > FULL_DAY_TIMESTAMP:
                 if IS_MODEL_TRAINING == False:
