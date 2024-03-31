@@ -8,7 +8,7 @@ server/learning_handler/models/*.json
 server/uploads/*.jpg
 server/uploads/*.JPG
 .vscode/
-server/model_details.json
+server/model_details*.json
 client/node_modules/
 client/.expo
 client/pages/env.js
