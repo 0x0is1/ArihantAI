@@ -11,7 +11,9 @@ RUN pip install kaggle gunicorn
 
 ENV KAGGLE_USERNAME=""
 ENV KAGGLE_KEY=""
-ENV MODEL_NAME="Arihant.v1"
+ENV MODEL_NAME=""
+ENV MODEL_TYPE=""
+ENV DS_SIZE=""
 
 RUN mkdir -p /root/.kaggle \
     && echo "{'username': '$KAGGLE_USERNAME', 'key': '$KAGGLE_KEY'}" > /root/.kaggle/kaggle.json \
