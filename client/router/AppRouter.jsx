@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import { StatusBar } from "react-native";
-
+import SplashScreen from "../components/SplashScreen";
 import Home from "../pages/Home/Home";
 import Result from "../pages/Result/Result";
 import Navbar from "../components/Navbar";
@@ -15,9 +15,10 @@ const AppRouter = () => {
       <Navbar />
       <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="Splash"
         screenOptions={{ headerShown: false }}
       >
+        <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Result" component={Result} />
       </Stack.Navigator>
