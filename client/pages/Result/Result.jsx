@@ -6,6 +6,7 @@ import LoadingContainer from "./components/LoadingContainer";
 import PredictionInfo from "./components/PredictionInfo";
 import DiseaseDetails from "./components/DiseaseDetails";
 import * as FileSystem from "expo-file-system";
+import FeedbackPage from "./components/FeedbackPage";
 
 const Result = ({ navigation }) => {
   const navParams = navigation.getState().routes[1].params;
@@ -86,6 +87,7 @@ const Result = ({ navigation }) => {
             {diseaseDetails && (
               <DiseaseDetails diseaseDetails={diseaseDetails} />
             )}
+            <FeedbackPage navigation={navigation}/>
           </View>
         )}
       </ScrollView>

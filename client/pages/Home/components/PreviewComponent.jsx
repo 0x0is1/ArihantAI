@@ -74,6 +74,7 @@ const PreviewComponent = ({
           style={{ borderRadius: 50 }}
           onPress={retakePicture}
           disabled={uploading}
+          underlayColor="transparent"
         >
           <Icon
             reverse
@@ -84,6 +85,7 @@ const PreviewComponent = ({
           />
         </TouchableHighlight>
         <TouchableHighlight
+          underlayColor="transparent"
           style={{ borderRadius: 50 }}
           onPress={uploadImage}
           disabled={uploading || !capturedImage}

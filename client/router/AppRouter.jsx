@@ -6,6 +6,7 @@ import SplashScreen from "../components/SplashScreen";
 import Home from "../pages/Home/Home";
 import Result from "../pages/Result/Result";
 import Navbar from "../components/Navbar";
+import Feedback from "../pages/Feedback/Feedback";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ const AppRouter = () => {
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Result" component={Result} />
+        <Stack.Screen name="Feedback" component={Feedback} />
       </Stack.Navigator>
     </NavigationContainer>
   );
