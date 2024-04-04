@@ -39,7 +39,7 @@ const PreviewComponent = ({
       formData.append("file", {
         uri: capturedImage.uri,
         type: "image/jpeg",
-        name: "photo.jpg",
+        name: "photo.JPG",
       });
 
       const response = await fetch(`${APIurl}/upload`, {
@@ -51,6 +51,7 @@ const PreviewComponent = ({
       });
 
       const responseData = await response.json();
+      responseData.preview = capturedImage.uri;
       navigation.navigate("Result", responseData)
     } catch (error) {
       console.error("Upload error:", error);

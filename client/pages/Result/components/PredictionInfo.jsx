@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 
-const PredictionInfo = ({result}) => {
+const PredictionInfo = ({result, preview}) => {
   return (
     <View style={[styles.resultContainer, styles.resultContainerMain]}>
+      <Image source={{ uri: preview }} style={styles.capturedImage} />
       <Text style={styles.resultText}>
         <Text style={styles.title}>Crop: </Text>
         {result.result[0].split("__")[0].replace("_", " ")}
@@ -42,5 +43,13 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
+  },
+  capturedImage: {
+    width: 280,
+    aspectRatio: 1,
+    borderRadius: 10,
+    marginBottom: 10,
+    borderWidth: 3,
+    borderColor: "#fff",
   },
 });

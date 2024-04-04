@@ -8,7 +8,9 @@ import DiseaseDetails from "./components/DiseaseDetails";
 import * as FileSystem from "expo-file-system";
 
 const Result = ({ navigation }) => {
-  const trid = navigation.getState().routes[1].params.tracking_id;
+  const navParams = navigation.getState().routes[1].params;
+  const trid = navParams.tracking_id;
+  const preview = navParams.preview;
   const [result, setResult] = useState(null);
   const [diseaseDetails, setDiseaseDetails] = useState(null);
   const [loadingResult, setLoadingResult] = useState(true);
@@ -80,7 +82,7 @@ const Result = ({ navigation }) => {
           <LoadingContainer />
         ) : (
           <View style={styles.viewContainer}>
-            <PredictionInfo result={result} />
+            <PredictionInfo result={result} preview={preview}/>
             {diseaseDetails && (
               <DiseaseDetails diseaseDetails={diseaseDetails} />
             )}
