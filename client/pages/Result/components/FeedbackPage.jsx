@@ -2,12 +2,12 @@ import { StyleSheet, TouchableHighlight, View } from "react-native";
 import React from "react";
 import { Icon } from "@rneui/themed";
 
-const FeedbackPage = ({navigation}) => {
+const FeedbackPage = ({navigation, preview}) => {
   const onLike = () => {
     alert("Thanks for your contribution!")
   };
   const onDislike = () => {
-    navigation.navigate("Feedback")
+    navigation.navigate("Feedback", preview);
   };
   return (
     <View style={styles.buttonContainer}>

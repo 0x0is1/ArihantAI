@@ -87,7 +87,7 @@ const Result = ({ navigation }) => {
             {diseaseDetails && (
               <DiseaseDetails diseaseDetails={diseaseDetails} />
             )}
-            <FeedbackPage navigation={navigation}/>
+            <FeedbackPage navigation={navigation} preview={preview} />
           </View>
         )}
       </ScrollView>
