@@ -1,54 +1,47 @@
-import { Button, StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Alert } from "react-native";
 import React, { useEffect, useState } from "react";
 import Dropdown from "./components/DropdownComponent";
+import * as FileSystem from "expo-file-system";
+import { encode } from "base-64";
 
-const Feedback = ({navigation}) => {
-  const navParams = navigation.getState().routes[1].params;
-  const preview = navParams.preview;
-  const [classDetails_raw, setClassDetails_raw] = useState({
-    class_names: [
-      "Apple___Apple_scab",
-      "Apple___Black_rot",
-      "Apple___Cedar_apple_rust",
-      "Apple___healthy",
-      "Blueberry___healthy",
-      "Cherry_(including_sour)___Powdery_mildew",
-      "Cherry_(including_sour)___healthy",
-      "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
-      "Corn_(maize)___Common_rust_",
-      "Corn_(maize)___Northern_Leaf_Blight",
-      "Corn_(maize)___healthy",
-      "Grape___Black_rot",
-      "Grape___Esca_(Black_Measles)",
-      "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
-      "Grape___healthy",
-      "Orange___Haunglongbing_(Citrus_greening)",
-      "Peach___Bacterial_spot",
-      "Peach___healthy",
-      "Pepper,_bell___Bacterial_spot",
-      "Pepper,_bell___healthy",
-      "Potato___Early_blight",
-      "Potato___Late_blight",
-      "Potato___healthy",
-      "Raspberry___healthy",
-      "Soybean___healthy",
-      "Squash___Powdery_mildew",
-      "Strawberry___Leaf_scorch",
-      "Strawberry___healthy",
-      "Tomato___Bacterial_spot",
-      "Tomato___Early_blight",
-      "Tomato___Late_blight",
-      "Tomato___Leaf_Mold",
-      "Tomato___Septoria_leaf_spot",
-      "Tomato___Spider_mites Two-spotted_spider_mite",
-      "Tomato___Target_Spot",
-      "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
-      "Tomato___Tomato_mosaic_virus",
-      "Tomato___healthy",
-    ],
-  });
+const Feedback = ({ navigation }) => {
+  const [APIurl, setAPIurl] = useState("");
+  const [classDetails_raw, setClassDetails_raw] = useState(null);
   const [crops_, setCrops_] = useState(null);
   const [diseases_, setDiseases_] = useState(null);
+  const navParams = navigation.getState().routes[1].params;
+  const preview = navParams.preview;
+  const [crop_, setCrop_] = useState(null);
+  const [disease_, setDisease_] = useState(null);
+
+  const uploadImage = async () => {
+    try {
+      const formData = new FormData();
+      const cdata = {
+        crop: crop_,
+        disease: disease_,
+      }
+      const cb64 = encode(JSON.stringify(cdata))
+      formData.append("file", {
+        uri: preview,
+        name: cb64,
+        type: "image/jpeg",
+      });
+      const response = await fetch(`${APIurl}/sendFeedback`, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      const responseData = await response.json();
+      alert(responseData.message);
+    } catch (error) {
+      console.error("Upload error:", error);
+      alert("Error uploading feedback");
+    }
+  };
 
   const parseClasses = (data) => {
     const uniqueCropsMap = new Map();
@@ -62,7 +55,7 @@ const Feedback = ({navigation}) => {
       if (!uniqueCropsMap.has(cropLabel)) {
         uniqueCropsMap.set(cropLabel, {
           label: cropLabel.replaceAll("_", " "),
-          value: diseaseLabel,
+          value: cropLabel,
         });
       }
 
@@ -81,27 +74,64 @@ const Feedback = ({navigation}) => {
     setDiseases_(uniqueDiseases);
   };
 
-  
-  const onSubmitListener = () => {
-    alert("Feedback submitted. Thanks for your contribution.");
+  const onSubmitListener = async () => {
+    uploadImage();
     navigation.goBack();
   };
+
   const onCancelListener = () => {
     navigation.goBack();
   };
 
+  const readFromFile = async () => {
+    try {
+      const filePath = FileSystem.documentDirectory + "envy/envy.js";
+      const fileContent = await FileSystem.readAsStringAsync(filePath);
+      setAPIurl(fileContent);
+    } catch (error) {
+      console.error("Failed to read file:", error);
+      Alert.alert("Error", "Failed to read file.");
+    }
+  };
+
   useEffect(() => {
-    parseClasses(classDetails_raw);
-  }, [classDetails_raw]);
+    const fetchData = async () => {
+      try {
+        await readFromFile();
+        if (!APIurl) return;
+
+        const response = await fetch(`${APIurl}/classes`, {
+          method: "GET",
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          },
+        }); 
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const responseData = await response.json();
+        setClassDetails_raw(responseData);
+        parseClasses(responseData);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+        Alert.alert("Error", "Failed to fetch data.");
+      }
+    };
+    fetchData();
+  }, [APIurl]);
 
   return (
+    classDetails_raw &&
     crops_ &&
     diseases_ && (
       <View style={styles.container}>
         <Text style={styles.title}>Enhancement Feedback</Text>
         <Image source={{ uri: preview }} style={styles.capturedImage} />
-        <Dropdown _key="Choose crop ..." data={crops_} />
-        <Dropdown _key="Choose disease ..." data={diseases_} />
+        <Dropdown _key="Choose crop ..." data={crops_} value={crop_} setValue={setCrop_} />
+        <Dropdown _key="Choose disease ..." data={diseases_} value={disease_} setValue={setDisease_}/>
         <View style={styles.buttonsContainer}>
           <Text style={styles.buttonContainer} onPress={onSubmitListener}>
             Submit
@@ -124,7 +154,7 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: "row",
     gap: 10,
-    alignItems: "center"
+    alignItems: "center",
   },
   capturedImage: {
     width: 280,

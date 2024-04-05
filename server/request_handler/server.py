@@ -92,6 +92,27 @@ def upload_file():
     else:
         return jsonify({'error': 'Invalid file format'}), 400
 
+@app.route('/sendFeedback', methods=['POST'])
+def send_feedback():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part in the request'}), 400
+
+    file = request.files['file']
+    data = json.loads(base64.b64decode(file.filename).decode("utf-8"))
+    crop_name = data.get('crop')
+    disease_name = data.get('disease')
+
+    if file and crop_name and disease_name:
+        folder_path = f"./learning_handler/datasets/New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)/train/{crop_name}___{disease_name}"
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+        filename = f"{uuid.uuid4()}.JPG"
+        file.save(os.path.join(folder_path, filename))
+        return jsonify({'message': 'Feedback recieved. Thanks for your contribution.'}), 201
+    else:
+        return jsonify({'message': 'Please fill both fields before submitting.'}), 400
+
 @app.route('/prediction_status/<string:tracking_id>', methods=['GET'])
 def get_prediction_status(tracking_id):
     if tracking_id in prediction_data:
@@ -126,7 +147,7 @@ def get_model_detail():
                     threading.Thread(target=train).start()
             model_details["status"] = 1
             model_details["message"] = "Working on it"
-            return jsonify(model_details)
+            return jsonify(model_details), 200
     except Exception as e:
         if IS_MODEL_TRAINING == False:
             IS_MODEL_TRAINING = True
@@ -139,3 +160,18 @@ def get_model_detail():
                 "status": -1,
                 "message": "No model found. A model is training right now"
             })
+
+@app.route('/classes', methods=['GET'])
+def get_classes():
+    try:
+        with open(f"./learning_handler/models/{MODEL_NAME}.T{MODEL_TYPE}.json", "r") as f:
+            classes = json.load(f)
+            classes["status"] = 1
+            classes["message"] = ""
+            return jsonify(classes), 200
+    except Exception as e:
+        print(e)
+        return jsonify({
+                "status": -1,
+                "message": "No class detail found for this model."
+            }), 400

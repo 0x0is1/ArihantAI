@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const DropdownComponent = ({_key, data}) => {
-  const [value, setValue] = useState(null);
+const DropdownComponent = ({ _key, data, value, setValue }) => {
   const [isFocus, setIsFocus] = useState(false);
 
   return (
