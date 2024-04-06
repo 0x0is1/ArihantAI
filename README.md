@@ -8,13 +8,6 @@ Fullstack app for Crop disease detection and solution suggestion AI. This app is
 
 https://github.com/0x0is1/ArihantAI/assets/42772562/d97b4595-5c9f-4f57-bdf9-d8a71e70baae
 
-## Participant details
-| Name                | Registration number | Effective Role | Institution |
-|---------------------|---------------------|----------------|-------------|
-| Prabuddh Raj Pandey | 12109163            | Team Leader    | LPU         |
-| Vaibhav Jain        | 12116035            | Developer      | LPU         |
-| Surya Singh         | 12114479            | Developer      | LPU         |
-
 ### Selected Problem Statement
 
 AGRICULTURE, FOODTECH & RURAL DEVELOPMENT :
